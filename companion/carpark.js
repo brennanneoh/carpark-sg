@@ -6,7 +6,7 @@ CarparkAPI.prototype.getAvailability = function () {
     fetch(url).then(function(response) {
       return response.json()
     }).then(function (json) {
-      let data = json.items[0].carpark_data.slice(0, 3);
+      let data = json.items[0].carpark_data;
       let carparks = [];
       data.forEach(function(info) {
         let c = {

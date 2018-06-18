@@ -25,7 +25,7 @@ CarparkUI.prototype.updateUI = function(state, carparks) {
       this.statusText.text = "Loading carparks ...";
     }
     else if (state === "disconnected") {
-      this.statusText.text = "Disconnected";
+      this.statusText.text = "Disconnected"
     }
     else if (state === "error") {
       this.statusText.text = "Something terrible happened.";
@@ -36,8 +36,13 @@ CarparkUI.prototype.updateUI = function(state, carparks) {
 CarparkUI.prototype.updateCarparkList = function(carparks) {
   for (let i = 0; i < 3; i++) {
     let tile = this.tiles[i];
-    console.log(carparks[i].carpark_number);
-    tile.getElementById("carpark-number").text = carparks[i].carpark_number;
-    tile.getElementById("lots").text = `${carparks[i].lots_available} / ${carparks[i].total_lots}`;
+    if (carparks[i]) {
+      tile.getElementById("carpark-number").text = carparks[i].carpark_number;
+      tile.getElementById("lots").text = `${carparks[i].lots_available} / ${carparks[i].total_lots}`;
+    }
+    else {
+      tile.getElementById("carpark-number").text = "";
+      tile.getElementById("lots").text = "";
+    }
   }
 }
