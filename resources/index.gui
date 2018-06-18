@@ -1,0 +1,20 @@
+<svg>
+  <symbol id="tile-carpark" focusable="false" pointer-events="visible" system-events="all">
+    <text id="carpark-number" font-size="20" x="5" y="40" fill="white">Number</text>
+    <text id="lots" x="5" y="78" font-size="30" fill="white" text-length="12">Lots</text>
+  </symbol>
+
+  <textarea id="status" class="status">status message</textarea>
+
+  <use id="carparkList" href="#tile-list">
+    <use id="carpark-0" href="#tile-list-item" class="item">
+      <use href="#tile-carpark" />
+    </use>
+    <use id="carpark-1" href="#tile-list-item" class="item">
+      <use href="#tile-carpark" />
+    </use>
+    <use id="carpark-2" href="#tile-list-item" class="item">
+      <use href="#tile-carpark" />
+    </use>
+  </use>
+</svg>
