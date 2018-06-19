@@ -4,10 +4,9 @@ export function CarparkUI() {
   this.carparkList = document.getElementById("carparkList");
   this.statusText = document.getElementById("status");
   this.tiles = [];
-  
+
   for (let i = 0; i < 3; i++) {
     let tile = document.getElementById(`carpark-${i}`);
-    console.log(`carpark-${i}`);
     this.tiles.push(tile);
   }
 }
@@ -26,7 +25,7 @@ CarparkUI.prototype.updateUI = function(state, carparks) {
       this.statusText.text = "Loading carparks ...";
     }
     else if (state === "disconnected") {
-      this.statusText.text = "Disconnected"
+      this.statusText.text = "Disconnected";
     }
     else if (state === "error") {
       this.statusText.text = "Something terrible happened.";
